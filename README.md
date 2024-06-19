@@ -82,4 +82,23 @@
 - **PyTorch Model**:
   - Inference time: 274 µs ± 69 µs per loop (mean ± std. dev. of 7 runs, 1000 loops each)
 
+**Model 7 using DNN**:
+- **Input Features**: `prev_accel`,`prev_yaw_rate`, `curr_voltage`,`curr_accel`,`curr_yaw_rate`
+- **Output Features**: `throttle_pwm`, `steering_pwm`
+- **PyTorch Model**:
+  - Inference time: 254 µs ± 76.8 µs per loop (mean ± std. dev. of 7 runs, 1000 loops each)
+- **TensorRT Model**:
+  - Inference time: The slowest run took 47.47 times longer than the fastest. This could mean that an intermediate result is being cached.
+    - 4.63 ms ± 8.86 ms per loop (mean ± std. dev. of 7 runs, 1 loop each)
 
+**Model 7 using LSTM**:
+- **Input Features**: `prev_accel`,`prev_yaw_rate`, `curr_voltage`,`curr_accel`,`curr_yaw_rate`
+- **Output Features**: `throttle_pwm`, `steering_pwm`
+- **PyTorch Model**:
+  - Inference time: 1.4 ms ± 248 µs per loop (mean ± std. dev. of 7 runs, 1000 loops each)
+
+**Model 7 using GRU**:
+- **Input Features**: `prev_accel`,`prev_yaw_rate`, `curr_voltage`,`curr_accel`,`curr_yaw_rate`
+- **Output Features**: `throttle_pwm`, `steering_pwm`
+- **PyTorch Model**:
+  - Inference time: 1.6 ms ± 347 µs per loop (mean ± std. dev. of 7 runs, 1000 loops each)
