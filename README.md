@@ -1,4 +1,4 @@
-### MODEL PREDICTIVE CONTROLLER IMPLEMENTATION
+### Learning Neural Network-based Controller for Calibrated Actuation in Lab-Scale Autonomous Ground Vehicles
 
 ### *Neural Network Model Information*
 ---
