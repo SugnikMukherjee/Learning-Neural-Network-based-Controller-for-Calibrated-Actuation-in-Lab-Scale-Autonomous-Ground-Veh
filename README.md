@@ -102,3 +102,21 @@
 - **Output Features**: `throttle_pwm`, `steering_pwm`
 - **PyTorch Model**:
   - Inference time: 1.6 ms ± 347 µs per loop (mean ± std. dev. of 7 runs, 1000 loops each)
+### *Linear Quadratic Regulator (LQR) Controller*
+---
+- **Methodology**: Designs optimal control law for continuous-time systems, aiming to minimize a quadratic cost function over a finite time horizon.
+- **System Equation**:  
+   x(t) = Ax(t) + Bu(t)
+  where
+  A and B are system matrices. For simplification, the A matrix is considered a null matrix and the B matrix is a matrix with all elements filled with 1. The equation for vehicle dynamics becomes:
+  dv/dt = acceleration and d(psi)/dt = omega
+- **Adaptation**: Uses the scipy control library for nonlinear optimization to adjust the controller parameters and adapt to changing system dynamics.
+
+### *Model Predictive Control (MPC)*
+---
+- **Methodology**: Predicts future system behavior by solving an optimization problem online, incorporating a prediction model of the system dynamics.
+- **System Equation**:  
+  dx(t)/dt = Ax(t) + Bu(t)
+  similar to LQR, with adjustments for predicting future states and optimizing control inputs.
+- **Nonlinear Optimization**: Utilizes scipy’s nonlinear optimization capabilities to solve the predictive control problem, adjusting inputs based on current and predicted states.
+    
